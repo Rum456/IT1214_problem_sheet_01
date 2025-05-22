@@ -1,6 +1,6 @@
 import java.util.*;
 
-// Student.java
+
 class Student {
     private int studentId;
     private String name;
@@ -42,7 +42,7 @@ class Student {
     }
 }
 
-// Classroom.java
+
 class Classroom {
     private Student[] students;
     private int numberOfStudents;
@@ -92,7 +92,7 @@ class Classroom {
 }
 
 
-// Main.java
+
  class Students_main {
     public static void main(String[] args) {
         // Create an instance of Classroom
