@@ -1,6 +1,5 @@
 import java.util.*;
 
-// 1. Define a Vehicle class
 class Vehicle {
     private String licensePlate;
     private String ownerName;
@@ -45,7 +44,6 @@ class Vehicle {
     }
 }
 
-// 2. Define a ParkingLot class
 class ParkingLot {
     private Vehicle[] parkedVehicles;
     private int currentVehicles;
@@ -56,9 +54,6 @@ class ParkingLot {
         currentVehicles = 0;
     }
 
-    // 3. Implement methods in ParkingLot
-
-    // o Park a new vehicle
     public boolean parkVehicle(Vehicle vehicle) {
         if (currentVehicles < MAX_CAPACITY) {
             parkedVehicles[currentVehicles] = vehicle;
@@ -71,16 +66,14 @@ class ParkingLot {
         }
     }
 
-    // o Remove a vehicle by license plate
     public boolean removeVehicle(String licensePlate) {
         for (int i = 0; i < currentVehicles; i++) {
             if (parkedVehicles[i].getLicensePlate().equals(licensePlate)) {
                 System.out.println("Vehicle with license plate " + licensePlate + " found and being removed.");
-                // Shift remaining vehicles to avoid gaps
                 for (int j = i; j < currentVehicles - 1; j++) {
                     parkedVehicles[j] = parkedVehicles[j + 1];
                 }
-                parkedVehicles[currentVehicles - 1] = null; // Clear the last slot
+                parkedVehicles[currentVehicles - 1] = null; 
                 currentVehicles--;
                 System.out.println("Vehicle with license plate " + licensePlate + " removed successfully.");
                 return true;
@@ -90,7 +83,6 @@ class ParkingLot {
         return false;
     }
 
-    // o Display details of all parked vehicles
     public void displayParkedVehicles() {
         if (currentVehicles == 0) {
             System.out.println("\nParking lot is empty.");
@@ -108,16 +100,11 @@ class ParkingLot {
     public static void main(String[] args) {
     
         ParkingLot myParkingLot = new ParkingLot();
-
-       
         myParkingLot.parkVehicle(new Vehicle("ABC123", "John Doe", 2));
         myParkingLot.parkVehicle(new Vehicle("XYZ789", "Jane Smith", 4));
         myParkingLot.parkVehicle(new Vehicle("LMN456", "Bob Brown", 1));
 
-        // o Remove the vehicle with license "XYZ789".
         myParkingLot.removeVehicle("XYZ789");
-
-        // o Display all parked vehicles.
         myParkingLot.displayParkedVehicles();
     }
 }
