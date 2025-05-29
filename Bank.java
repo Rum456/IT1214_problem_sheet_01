@@ -92,7 +92,7 @@ class Bank {
         return null; 
     }
 
-    // o Withdraw money from an account given its account number and amount.
+   
     public void withdrawMoney(int accountNumber, double amount) {
         BankAccount account = findAccount(accountNumber);
         if (account == null) {
