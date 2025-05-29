@@ -95,21 +95,15 @@ class Classroom {
 
  class Students_main {
     public static void main(String[] args) {
-        // Create an instance of Classroom
         Classroom myClassroom = new Classroom();
 
-        // Add the three students from the table
         myClassroom.addStudent(new Student(101, "Alice Smith", 12));
         myClassroom.addStudent(new Student(102, "Bob Jones", 15));
         myClassroom.addStudent(new Student(103, "Carol Lee", 10));
 
-        // Update Bob Jones’s attendance to 16 days
         myClassroom.updateDaysAttended(102, 16);
-
-        // Attempt to update attendance for a student with ID 104 (who does not exist)
         myClassroom.updateDaysAttended(104, 8);
 
-        // Display all student details
         myClassroom.displayAllStudents();
     }
 }
